@@ -1,0 +1,15 @@
+.home-wrapper {
+  position: relative;
+  overflow: hidden; /* 
+    background: linear-gradient(180deg, #0c0c1d, #111132); */
+  scroll-snap-align: start;
+  font-family: var(--fontFamily-main);
+  min-height: 50vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .home-wrapper {
+    font-size: 1rem;
+    top: 25%;
+  }
+}

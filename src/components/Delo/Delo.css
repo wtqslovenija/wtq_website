@@ -1,0 +1,201 @@
+.delo-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondaryColor);
+  scroll-snap-align: start;
+  font-family: var(--fontFamily-main);
+  min-height: 90vh;
+  width: 100%;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .delo-wrapper {
+    font-size: 1rem;
+  }
+}
+
+.delo-container {
+  width: 100%;
+  max-width: 1100px;
+}
+.delo-container h1 {
+  text-align: left;
+}
+.button-container {
+  width: 100%;
+  position: relative;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 0 1rem;
+}
+@media screen and (max-width: 1000px) {
+  .button-container {
+    grid-template-columns: repeat(2, auto);
+    flex-direction: column;
+  }
+}
+.button-container button {
+  width: 10rem;
+  height: 2rem;
+  margin: auto 0.5rem;
+  border: 1px solid var(--mainColor);
+  border-radius: 5px;
+  background-color: var(--mainColor);
+  font-family: var(--fontFamily-main);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.button-container button:hover {
+  background-color: var(--secondaryColor);
+  color: var(--mainColor);
+}
+@media screen and (max-width: 1000px) {
+  .button-container button {
+    margin: 0.5rem auto;
+  }
+}
+.delo-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1000px) {
+  .delo-flex  {
+    flex-direction: column;
+  }
+}
+
+.delo-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+/* ----------- vaše delo ------------------------------ */
+
+.delo-content ul {
+  width: 90%;
+}
+.delo-content li {
+  text-align: left;
+  list-style-position: inside;
+}
+@media screen and (max-width: 1000px) {
+  .delo-content {
+    flex-direction: column;
+  }
+}
+.delo-vasedelo-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.delo-vasedelo-text p{
+  padding-bottom: 1rem;
+}
+
+/* ----------- nivo------------------------------ */
+/* For desktop and larger screens */
+.delo-tabela {
+  width: 100%;
+  overflow-x: auto; /* Add horizontal scrolling if needed */
+}
+
+.delo-tabela table {
+  border-collapse: collapse;
+  width: 100%; /* Ensure the table takes full width */
+  text-align: center;
+}
+
+.delo-tabela th,
+.delo-tabela td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.delo-tabela th {
+  background-color: var(--mainColor);
+  color: white;
+}
+
+.delo-tabela td {
+  background-color: #f2f2f2;
+}
+
+/* For mobile screens */
+@media only screen and (max-width: 600px) {
+  .delo-tabela {
+    width: 100%;
+  }
+
+  .delo-tabela table {
+    width: 100%;
+    font-size: 12px; /* Decrease font size on mobile */
+  }
+
+  .delo-tabela th, 
+  .delo-tabela td {
+    padding: 3px; /* Reduce padding for mobile */
+  }
+}
+
+
+.delo-tabela td {
+  background-color: #f2f2f2;
+}
+
+.delo-slideshow {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .delo-slideshow {
+    min-height: 60vh;
+  }
+}
+.delo-slideshow p {
+  margin: auto;
+  font-weight: bold;
+  transition: opacity 0.5s ease;
+}
+
+.slideshow-btn {
+  background-color: var(--mainColor);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.button-flex {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+}
+.slideshow-btn:hover {
+  background-color: var(--mainColor);
+}
+
+.slideshow-btn:focus {
+  outline: none;
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+}

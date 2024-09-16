@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,300&display=swap");
+
+:root {
+  /* colors */
+  --mainColor: #687fdd;
+  --mainColorLight: #7e87aa;
+  --secondaryColor: rgba(210, 210, 210, 255);
+  --textColor: #eee;
+  --white: #eee;
+  --transparentBlackColor: rgba(0, 0, 0, 0.55);
+  --mainFontFamily: "Titillium Web", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: var(--mainFontFamily);
+  scroll-behavior: smooth;
+  max-width: 2560px;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--mainColor);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--textColor);
+}
+
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}

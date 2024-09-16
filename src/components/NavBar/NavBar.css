@@ -1,0 +1,133 @@
+.nav-group {
+  background-color: var(--mainColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  height: 50vh;
+  border-radius: 0 0 0 0;
+  position: fixed;
+  top: 0;
+  left: 0%;
+  transition: 0.3s linear;
+  z-index: 55;
+}
+.nav-bg {
+  top: -80px;
+  transition: 0.3s linear;
+}
+.nav-menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 10px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+.nav-menu hr {
+  display: none;
+}
+.nav-links {
+  text-decoration: none;
+  color: black;
+  line-height: 2.75rem;
+  text-transform: uppercase;
+  list-style: none;
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  white-space: nowrap;
+}
+
+.nav-links:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.nav-menu .active {
+  color: var(--secondaryColor);
+}
+.nav-menu .active:hover {
+  color: black;
+}
+.menu-icons {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-group {
+    position: fixed;
+    width: 20%;
+    left: 0%;
+    border-radius: 0 0 13px 0;
+    height: 80px;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 300%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -300%;
+    opacity: 0;
+    align-items: stretch;
+    padding: 0 0 0 0;
+    margin: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    border-radius: 0 0 0 13px;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    border: 1px solid var(--mainColor);
+  }
+
+  .nav-menu hr {
+    display: block;
+    max-width: 90px;
+  }
+
+  .nav-links {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    color: var(--mainColor);
+  }
+
+  .nav-links:hover {
+    background: none;
+    color: var(--mainColor);
+  }
+
+  .menu-icons {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .menu-icons h3 {
+    padding: 0 9rem 0 0;
+  }
+
+  .menu-icons i {
+    font-size: 1.2rem;
+  }
+  .fa-bars {
+    color: #fff;
+  }
+  .fa-times {
+    color: var(--mainColor);
+  }
+}

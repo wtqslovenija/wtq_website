@@ -1,15 +1,17 @@
 .nav-group {
-  background-color: var(--mainColor);
+  background: transparent;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
-  height: 50vh;
+  /* box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25); */
+  height: 70px;
   border-radius: 0 0 0 0;
   position: fixed;
   top: 0;
-  left: 0%;
+  right: 0%;
+  width: 100%;
   transition: 0.3s linear;
   z-index: 55;
 }
@@ -18,13 +20,14 @@
   transition: 0.3s linear;
 }
 .nav-menu {
-  width: 100%;
+  width: 70%;
+  max-width: 800px;
   display: grid;
-  grid-template-columns: repeat(1, auto);
+  grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
   align-items: center;
-  margin: 0;
+  margin: auto;
 }
 .nav-menu hr {
   display: none;
@@ -62,9 +65,10 @@
   .nav-group {
     position: fixed;
     width: 20%;
-    left: 0%;
-    border-radius: 0 0 13px 0;
+    right: 0%;
+    border-radius: 0 0 0 13px;
     height: 80px;
+    background: transparent;
   }
   .nav-menu {
     display: flex;
@@ -75,7 +79,7 @@
     height: auto;
     position: absolute;
     top: 0;
-    left: -300%;
+    right: -300%;
     opacity: 0;
     align-items: stretch;
     padding: 0 0 0 0;
@@ -85,7 +89,7 @@
   }
 
   .nav-menu.active {
-    left: 0;
+    right: 0;
     opacity: 1;
     z-index: -1;
     transition: 0.3s ease-in-out;
@@ -125,7 +129,7 @@
     font-size: 1.2rem;
   }
   .fa-bars {
-    color: #fff;
+    color: black;
   }
   .fa-times {
     color: var(--mainColor);

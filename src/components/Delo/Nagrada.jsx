@@ -6,30 +6,29 @@ export default function Nagrada() {
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
 
   // Function to go to the next slide
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  const handleSlide = (slide) => {
+    setCurrentSlide(slide);
   };
 
   // Function to go to the previous slide
-  const prevSlide = () => {
+  /*const prevSlide = () => {
     setCurrentSlide(
       (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
     );
-  };
+  };*/
 
   // Automatically change the slide every 3 seconds
-  useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 3000);
-    return () => clearInterval(slideInterval); // Cleanup interval on unmount
-  }, []);
 
   return (
     <div className="delo-content">
       <h1>Nagrada za povabljenega novega člana</h1>
       <div className="delo-nagrada-text">
         <p>
+          <br />
           V spodnji preglednici si lahko ogledate nivoje, število opravljenih in
           plačilo za opravljene naloge.
+          <br />
+          <br />
         </p>
       </div>
       <div className="delo-flex">
@@ -50,7 +49,7 @@ export default function Nagrada() {
                 <td>8</td>
                 <td>4</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>LV2</td>
                 <td>40.8</td>
                 <td>27.2</td>
@@ -62,7 +61,7 @@ export default function Nagrada() {
                 <td>62.4</td>
                 <td>31.2</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>LV4</td>
                 <td>216</td>
                 <td>144</td>
@@ -70,12 +69,18 @@ export default function Nagrada() {
               </tr>
               <tr>
                 <td>LV5</td>
+                <td>456</td>
+                <td>304</td>
+                <td>152</td>
+              </tr>
+              <tr className="lv-color">
+                <td>LV6</td>
                 <td>?</td>
                 <td>?</td>
                 <td>?</td>
               </tr>
               <tr>
-                <td>LV6</td>
+                <td>LV7</td>
                 <td>?</td>
                 <td>?</td>
                 <td>?</td>
@@ -85,16 +90,33 @@ export default function Nagrada() {
         </div>
         <div className="delo-slideshow">
           <div key={currentSlide}>
-            {/* 
-            <p>{slides[currentSlide].title}</p> */}
+            <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
-          <div className="button-flex">
-            <button onClick={prevSlide} className="slideshow-btn prev">
-              Previous
+          <div className="button-nagrada-flex">
+            <button
+              onClick={() => handleSlide(0)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 1
             </button>
-            <button onClick={nextSlide} className="slideshow-btn next">
-              Next
+            <button
+              onClick={() => handleSlide(1)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 2
+            </button>
+            <button
+              onClick={() => handleSlide(2)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 3
+            </button>
+            <button
+              onClick={() => handleSlide(3)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 4
             </button>
           </div>
         </div>

@@ -1,10 +1,10 @@
 export const PrihodekItems = [
   {
-    title: "LV1",
-    text: "The people you invite are your level 1 members, the people your level 1 members invite are your level 2 members, and the people your level 2 members invite are your level 3 members. You can get invitation rewards for up to three-level members to activate their accounts.",
+    title: "PRIMER 1",
+    text: "Osebe, ki jih povabite, so vaši člani na ravni 1, osebe, ki jih povabijo vaši člani na ravni 1, so vaši člani na ravni 2, osebe, ki jih povabijo vaši člani na ravni 2, pa so vaši člani na ravni 3. Prejmete lahko nagrade za povabila za člane do treh ravni, da aktivirate njihove račune.",
   },
   {
-    title: "LV2",
-    text: "Your account is a LV2 level account. You have invited friend A to activate the LV2 level account. You can get 40.8 USDT as an invitation reward, and friend A will become your level 1 member. When your level 1 member invites friend B to activate the LV2 level account, you can get a 27.2 USDT invitation reward, and friend B will become your level 2 member. When your level 2 member invites friend C to activate the LV2 account, you can get a 13.6 USDT invitation reward, and friend C will become your level 3 member. You can get invitation rewards for up to three-level members to activate their accounts.The more people you invite or the more people your Level 1 and Level 2 members invite, the more invitation rewards you will get, without limit.",
+    title: "PRIMER 2",
+    text: "Vaš račun je račun na ravni LV2. Povabili ste prijatelja A, da aktivira račun ravni LV2. Kot nagrado za povabilo lahko prejmete 40,8 USDT in prijatelj A bo postal vaš član 1. stopnje. Ko vaš član na ravni 1 povabi prijatelja B, da aktivira račun na ravni LV2, lahko prejmete nagrado za povabilo v višini 27,2 USDT in prijatelj B bo postal vaš član na ravni 2. Ko vaš član 2. stopnje povabi prijatelja C, da aktivira račun LV2, lahko prejmete 13,6 USDT nagrade za povabilo in prijatelj C bo postal vaš član 3. stopnje. Prejmete lahko nagrade za povabilo za člane do treh ravni, da aktivirajo svoje račune. Več ljudi kot povabite ali več ljudi kot povabijo vaši člani 1. in 2. stopnje, več nagrad za povabilo boste prejeli, neomejeno.",
   },
 ];

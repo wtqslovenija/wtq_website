@@ -8,9 +8,8 @@ export default function Akcije() {
     <>
       <NavBar />
       <div className="akcije-wrapper">
-        <div className="akcije-container">
-          <h1>AKCIJE</h1>
-        </div>
+        <h1>AKCIJE</h1>
+        <div className="akcije-container">content</div>
       </div>
       <Footer />
     </>

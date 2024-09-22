@@ -11,15 +11,17 @@ export default function Pomoc() {
     <>
       <NavBar />
       <div className="pomoc-wrapper">
+        <h1>POMOC</h1>
         <div className="pomoc-container">
-          <h1>POMOC</h1>
-          <p>- Kako izvesti polnjenje WTQ računa(RECHARGE),</p>
-          <p>- Kako izvesti prenos sredstev(WITDROW) iz WTQ računa,</p>
-          <p>- Kako poslati poker nagrade,</p>
-          <p>- Koko prenesti sredstva iz digitalne denarnice na REVOLUT,</p>
-          <p>- Kaj je REVOLUT,</p>
-          <p>- Kako izvesti naloge in kam jih poslati,</p>
-          <p>- Kje najdem zadnje akcije.</p>
+          <ul>
+            <li>Kako izvesti polnjenje WTQ računa(RECHARGE),</li>
+            <li>Kako izvesti prenos sredstev(WITDROW) iz WTQ računa,</li>
+            <li>Kako poslati poker nagrade,</li>
+            <li>Kako prenesti sredstva iz digitalne denarnice na REVOLUT,</li>
+            <li>Kaj je REVOLUT,</li>
+            <li>Kako izvesti naloge in kam jih poslati,</li>
+            <li>Kje najdem zadnje akcije.</li>
+          </ul>
           <video width="200px" height="auto" controls>
             <source src={BinanceSetup} type="video/mp4" />
           </video>

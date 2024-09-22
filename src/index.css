@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
 :root {
   /* colors */
-  --mainColor: #687fdd;
-  --mainColorLight: #7e87aa;
-  --secondaryColor: rgba(210, 210, 210, 255);
-  --textColor: #eee;
+  --mainColor: #5491d4;
+  --mainColorLight: #c8e0ef;
+  --secondaryColor: #00008b;
+  --textColor: black;
   --white: #eee;
   --transparentBlackColor: rgba(0, 0, 0, 0.55);
-  --mainFontFamily: "Titillium Web", sans-serif;
+  --mainFontFamily: "Space Grotesk", sans-serif;
+  --fontSizePhone: 1.2rem;
+  --fontSizeComp: 1.5rem;
 }
 
 * {
@@ -16,10 +19,27 @@
   margin: auto;
   box-sizing: border-box;
   font-family: var(--mainFontFamily);
+  font-size: medium;
   scroll-behavior: smooth;
   max-width: 2560px;
 }
+p,
+li {
+  font-size: 1.4rem;
+  text-align: justify;
+}
 
+@media screen and (max-width: 1000px) {
+  p,
+  li {
+    font-size: 0.8rem;
+  }
+}
+.bold {
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+}
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;

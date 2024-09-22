@@ -1,23 +1,47 @@
 .pomoc-wrapper {
   position: relative;
   overflow: hidden;
-  background-color: var(--secondaryColor);
+  background-color: var(--mainColorLight);
   scroll-snap-align: start;
   font-family: var(--fontFamily-main);
-  min-height: 90vh;
+  min-height: 95vh;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 }
-
-@media screen and (max-width: 1000px) {
-  .pomoc-wrapper {
-    font-size: 1rem;
-  }
+.pomoc-wrapper h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 3rem;
 }
-
 .pomoc-container {
-  width: 100%;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  background-color: var(--mainColor);
+}
+@media screen and (max-width: 1000px) {
+  .pomoc-container {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}
+.pomoc-container ul {
+  width: 100%;
+}
+.pomoc-container li {
+  text-align: left;
+  list-style-position: inside;
+  font-size: var(--fontSizeComp);
+  font-size: calc(var(--fontSizeComp) * 0.9);
+}
+
+@media screen and (max-width: 1000px) {
+  .pomoc-container li {
+    text-align: left;
+    font-size: var(--fontSizePhone);
+  }
 }

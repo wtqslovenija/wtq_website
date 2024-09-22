@@ -6,30 +6,20 @@ export default function Prihodek() {
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
 
   // Function to go to the next slide
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  const handleSlide = (slide) => {
+    setCurrentSlide(slide);
   };
-
-  // Function to go to the previous slide
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
-    );
-  };
-
-  // Automatically change the slide every 3 seconds
-  useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 3000);
-    return () => clearInterval(slideInterval); // Cleanup interval on unmount
-  }, []);
 
   return (
     <div className="delo-content">
       <h1>Pasivni Prihodek</h1>
       <div className="delo-nagrada-text">
         <p>
-          S pridobitvijo člana v vaši organizacijski strukturi do 3.nivoja, vam
-          dnevno pripada pasivni prihodek.
+          <br />S pridobitvijo člana v vaši organizacijski strukturi do nivoja
+          3, vam dnevno pripada pasivni prihodek. V spodnji preglednici sta
+          prikazana primera za LV3 in LV4:
+          <br />
+          <br />
         </p>
       </div>
       <div className="delo-flex">
@@ -37,27 +27,69 @@ export default function Prihodek() {
           <table>
             <thead>
               <tr>
-                <th>LEVEL</th>
-                <th>Rebate Ratio</th>
-                <th>Task Comission (3600USDT)</th>
-                <th>Task Comission (3600USDT) - Vip Account</th>
+                <th>Nivo</th>
+                <th>Rabatno razmerje</th>
+                <th>
+                  Provizija opravljenih nalog
+                  <br />
+                  (LV3 - 44USDT)
+                </th>
+                <th>Provizija opravljenih nalog (SLV3 - 64USDT) - VIP račun</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Level 1</td>
+                <td>LV1</td>
+                <td>{"<3%>"}</td>
+                <td>1.32</td>
+                <td>1,92</td>
+              </tr>
+              <tr className="lv-color">
+                <td>LV2</td>
+                <td>{"<2%>"}</td>
+                <td>0,88</td>
+                <td>1,28</td>
+              </tr>
+              <tr>
+                <td>LV3</td>
+                <td>{"<1%>"}</td>
+                <td>0,44</td>
+                <td>0.64</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <br />
+          <table>
+            <thead>
+              <tr>
+                <th>Nivo</th>
+                <th>Rabatno razmerje</th>
+                <th>
+                  Provizija opravljenih nalog
+                  <br />
+                  (LV4 - 104USDT)
+                </th>
+                <th>
+                  Provizija opravljenih nalog (SLV4 - 144USDT) - VIP račun
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LV1</td>
                 <td>{"<3%>"}</td>
                 <td>3.12</td>
                 <td>4.32</td>
               </tr>
-              <tr>
-                <td>Level 2</td>
+              <tr className="lv-color">
+                <td>LV2</td>
                 <td>{"<2%>"}</td>
                 <td>2.08</td>
                 <td>2.88</td>
               </tr>
               <tr>
-                <td>Level 3</td>
+                <td>LV3</td>
                 <td>{"<1%>"}</td>
                 <td>1.04</td>
                 <td>1.44</td>
@@ -67,16 +99,21 @@ export default function Prihodek() {
         </div>
         <div className="delo-slideshow">
           <div key={currentSlide}>
-            {/* 
-            <p>{slides[currentSlide].title}</p> */}
+            <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
-          <div className="button-flex">
-            <button onClick={prevSlide} className="slideshow-btn prev">
-              Previous
+          <div className="button-nagrada-flex">
+            <button
+              onClick={() => handleSlide(0)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 1
             </button>
-            <button onClick={nextSlide} className="slideshow-btn next">
-              Next
+            <button
+              onClick={() => handleSlide(1)}
+              className="slideshow-nagrada-btn"
+            >
+              PRIMER 2
             </button>
           </div>
         </div>

@@ -5,22 +5,17 @@ export default function Nivo() {
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
 
   // Function to go to the next slide
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  const handleSlide = (slide) => {
+    setCurrentSlide(slide);
   };
 
-  // Function to go to the previous slide
+  /*  // Function to go to the previous slide
   const prevSlide = () => {
     setCurrentSlide(
       (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
     );
-  };
+  }; */
 
-  // Automatically change the slide every 3 seconds
-  useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 3000);
-    return () => clearInterval(slideInterval); // Cleanup interval on unmount
-  }, []);
   return (
     <div className="delo-content">
       <h1>Nivo</h1>
@@ -35,12 +30,12 @@ export default function Nivo() {
           <table>
             <thead>
               <tr>
-                <th>LEVEL</th>
-                <th>PRICE (USDT)</th>
-                <th>DAILY TASKS</th>
-                <th>COMMISSION PER TASK (USDT)</th>
-                <th>DAILY INCOME (USDT)</th>
-                <th>WEEKEND INCOME (USDT)</th>
+                <th>Level</th>
+                <th>Price (USDT)</th>
+                <th>Daily Tasks</th>
+                <th>Commission per Task (USDT)</th>
+                <th>Daily income (USDT)</th>
+                <th>Weekend income (USDT)</th>
               </tr>
             </thead>
             <tbody>
@@ -60,7 +55,7 @@ export default function Nivo() {
                 <td>2</td>
                 <td>1</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>LV1</td>
                 <td>200</td>
                 <td>12</td>
@@ -68,7 +63,7 @@ export default function Nivo() {
                 <td>6</td>
                 <td>3</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>SLV1 (VIP)</td>
                 <td>200</td>
                 <td>16</td>
@@ -92,7 +87,7 @@ export default function Nivo() {
                 <td>28</td>
                 <td>14</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>LV3</td>
                 <td>1560</td>
                 <td>22</td>
@@ -100,7 +95,7 @@ export default function Nivo() {
                 <td>44</td>
                 <td>22</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>SLV3 (VIP)</td>
                 <td>1560</td>
                 <td>32</td>
@@ -124,7 +119,7 @@ export default function Nivo() {
                 <td>144</td>
                 <td>72</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>LV5</td>
                 <td>7600</td>
                 <td>40</td>
@@ -132,7 +127,7 @@ export default function Nivo() {
                 <td>200</td>
                 <td>100</td>
               </tr>
-              <tr>
+              <tr className="lv-color">
                 <td>SLV5 (VIP)</td>
                 <td>7600</td>
                 <td>56</td>
@@ -156,8 +151,16 @@ export default function Nivo() {
                 <td>800</td>
                 <td>400</td>
               </tr>
-              <tr>
-                <td>?</td>
+              <tr className="lv-color">
+                <td>LV7</td>
+                <td>29800</td>
+                <td>200</td>
+                <td>6,5</td>
+                <td>1300</td>
+                <td>650</td>
+              </tr>
+              <tr className="lv-color">
+                <td>LV7</td>
                 <td>?</td>
                 <td>?</td>
                 <td>?</td>
@@ -170,15 +173,30 @@ export default function Nivo() {
 
         <div className="delo-slideshow">
           <div key={currentSlide}>
-            <p>{slides[currentSlide].title}</p>
+            <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
           <div className="button-flex">
-            <button onClick={prevSlide} className="slideshow-btn prev">
-              Previous
+            <button onClick={() => handleSlide(0)} className="slideshow-btn">
+              LV1
             </button>
-            <button onClick={nextSlide} className="slideshow-btn next">
-              Next
+            <button onClick={() => handleSlide(1)} className="slideshow-btn">
+              LV2
+            </button>
+            <button onClick={() => handleSlide(2)} className="slideshow-btn">
+              LV3
+            </button>
+            <button onClick={() => handleSlide(3)} className="slideshow-btn">
+              LV4
+            </button>
+            <button onClick={() => handleSlide(4)} className="slideshow-btn">
+              LV5
+            </button>
+            <button onClick={() => handleSlide(5)} className="slideshow-btn">
+              LV6
+            </button>
+            <button onClick={() => handleSlide(6)} className="slideshow-btn">
+              LV7
             </button>
           </div>
         </div>

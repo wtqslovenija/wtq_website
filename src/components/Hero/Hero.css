@@ -1,15 +1,64 @@
-.home-wrapper {
+.hero-wrapper {
   position: relative;
   overflow: hidden; /* 
     background: linear-gradient(180deg, #0c0c1d, #111132); */
   scroll-snap-align: start;
   font-family: var(--fontFamily-main);
   min-height: 50vh;
+  background: linear-gradient(180deg, #4e8fd3, #cde3f3);
+  width: 100%;
 }
-
 @media screen and (max-width: 1000px) {
-  .home-wrapper {
+  .hero-wrapper {
     font-size: 1rem;
     top: 25%;
+    background: linear-gradient(180deg, #4e8fd3, #c8e0ef);
+  }
+}
+.hero-margin {
+  height: 30svh;
+  background: linear-gradient(90deg, #4e8fd3, #5a96d5);
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .hero-margin {
+    display: block;
+  }
+}
+
+.hero-wrapper img {
+  height: auto;
+  max-height: 100vh;
+  width: 1000px;
+  object-fit: contain;
+  margin: 0;
+}
+@media screen and (max-width: 1000px) {
+  .hero-wrapper img {
+    height: 70svh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-logo img {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}
+@media screen and (max-width: 1000px) {
+  .hero-logo img {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50vw;
+    width: 50vw;
+    object-fit: contain;
   }
 }

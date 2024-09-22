@@ -1,27 +1,24 @@
 .delo-wrapper {
   position: relative;
   overflow: hidden;
-  background-color: var(--secondaryColor);
+  background-color: var(--mainColorLight);
   scroll-snap-align: start;
   font-family: var(--fontFamily-main);
   min-height: 90vh;
   width: 100%;
-  padding: 2rem;
-}
-
-@media screen and (max-width: 1000px) {
-  .delo-wrapper {
-    font-size: 1rem;
-  }
+  padding: 1rem;
 }
 
 .delo-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1400px;
+  margin-top: 5rem;
+  border-radius: 20px;
 }
 .delo-container h1 {
   text-align: left;
 }
+
 .button-container {
   width: 100%;
   position: relative;
@@ -29,32 +26,43 @@
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 0 1rem;
-}
-@media screen and (max-width: 1000px) {
-  .button-container {
-    grid-template-columns: repeat(2, auto);
-    flex-direction: column;
-  }
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .button-container button {
   width: 10rem;
-  height: 2rem;
+  height: 4rem;
   margin: auto 0.5rem;
-  border: 1px solid var(--mainColor);
+  border: none;
   border-radius: 5px;
-  background-color: var(--mainColor);
+  background-color: rgba(255, 255, 255, 0.9);
   font-family: var(--fontFamily-main);
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 .button-container button:hover {
   background-color: var(--secondaryColor);
   color: var(--mainColor);
 }
 @media screen and (max-width: 1000px) {
+  .button-container {
+    grid-template-columns: repeat(2, auto);
+  }
   .button-container button {
     margin: 0.5rem auto;
   }
+}
+
+.button-container img {
+  height: 2rem;
+  width: 2rem;
 }
 .delo-flex {
   width: 100%;
@@ -62,7 +70,7 @@
   flex-direction: row;
 }
 @media screen and (max-width: 1000px) {
-  .delo-flex  {
+  .delo-flex {
     flex-direction: column;
   }
 }
@@ -71,33 +79,105 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+}
+.delo-content h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 /* ----------- vaše delo ------------------------------ */
 
 .delo-content ul {
-  width: 90%;
+  width: 100%;
 }
 .delo-content li {
   text-align: left;
   list-style-position: inside;
+  font-size: var(--fontSizeComp);
+  font-size: calc(var(--fontSizeComp) * 0.9);
 }
 @media screen and (max-width: 1000px) {
   .delo-content {
     flex-direction: column;
+  }
+  .delo-content li {
+    text-align: left;
+    list-style-position: inside;
+    font-size: calc(var(--fontSizePhone) * 0.9);
   }
 }
 .delo-vasedelo-text {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
 }
-.delo-vasedelo-text p{
+.delo-vasedelo-text p {
   padding-bottom: 1rem;
+  font-size: var(--fontSizeComp);
+}
+.delo-vasedelo-flex {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--mainColor);
+  border-radius: 25px;
+  border: 2px solid var(--mainColor);
+  padding: 2rem;
+  margin: 2rem 0;
 }
 
+@media screen and (max-width: 1000px) {
+  .delo-vasedelo-flex {
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 1rem;
+  }
+  .delo-vasedelo-text p {
+    padding-bottom: 1rem;
+    font-size: var(--fontSizePhone);
+  }
+}
+.delo-image-container {
+  width: 100%;
+}
+.delo-image-container img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  clip-path: inset(8.5% 14% 8.5% 14% round 8.5%);
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .delo-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+.delo-image-container video {
+  position: relative;
+  top: -150px;
+  left: 0;
+  width: 50%;
+  height: 35%; /* 
+  clip-path: inset(0% 23% 0% 23%); */
+}
+
+@media (max-width: 768px) {
+  .delo-image-container video {
+    top: -400px;
+    left: 0;
+    width: 70%;
+    height: auto;
+  }
+}
 /* ----------- nivo------------------------------ */
 /* For desktop and larger screens */
+.delo-nivo-text {
+  margin: 1rem 0;
+}
 .delo-tabela {
   width: 100%;
   overflow-x: auto; /* Add horizontal scrolling if needed */
@@ -107,12 +187,15 @@
   border-collapse: collapse;
   width: 100%; /* Ensure the table takes full width */
   text-align: center;
+  font-family: var(--fontFamily-main);
 }
 
 .delo-tabela th,
 .delo-tabela td {
   border: 1px solid #000;
   padding: 8px;
+  width: 15%;
+  font-size: var(--fontSizeComp);
 }
 
 .delo-tabela th {
@@ -120,8 +203,8 @@
   color: white;
 }
 
-.delo-tabela td {
-  background-color: #f2f2f2;
+.lv-color {
+  background-color: rgb(214, 227, 253);
 }
 
 /* For mobile screens */
@@ -132,18 +215,14 @@
 
   .delo-tabela table {
     width: 100%;
-    font-size: 12px; /* Decrease font size on mobile */
+    font-size: 1.2rem; /* Decrease font size on mobile */
   }
 
-  .delo-tabela th, 
+  .delo-tabela th,
   .delo-tabela td {
     padding: 3px; /* Reduce padding for mobile */
+    font-size: var(--fontSizePhone);
   }
-}
-
-
-.delo-tabela td {
-  background-color: #f2f2f2;
 }
 
 .delo-slideshow {
@@ -151,45 +230,102 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: black;
+  padding: 2rem;
 }
-
+.p {
+}
 @media screen and (max-width: 1000px) {
   .delo-slideshow {
-    min-height: 60vh;
+    min-height: 50vh;
   }
 }
 .delo-slideshow p {
   margin: auto;
-  font-weight: bold;
   transition: opacity 0.5s ease;
+  font-family: var(--fontFamily-main);
+}
+.delo-slideshow h3 {
+  font-size: 2rem;
 }
 
 .slideshow-btn {
+  position: relative;
   background-color: var(--mainColor);
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 0.4rem 0.4rem;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  width: 3rem;
+  height: 2rem;
 }
 .button-flex {
   position: relative;
   display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  flex-wrap: wrap;
+  grid-gap: 0.8rem;
   width: 100%;
   height: 50px;
 }
 .slideshow-btn:hover {
-  background-color: var(--mainColor);
+  background-color: white;
+  color: rgb(34, 4, 168);
+  border: 1px solid rgb(34, 4, 168); /* Nastavite širino, stil in barvo obrobe */
 }
 
 .slideshow-btn:focus {
   outline: none;
 }
+@media screen and (max-width: 1000px) {
+  .button-flex {
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+  }
+}
 
+.slideshow-nagrada-btn {
+  position: relative;
+  background-color: var(--mainColor);
+  border: none;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 3.8rem;
+  height: 2rem;
+}
+
+.slideshow-nagrada-btn:hover {
+  background-color: white;
+  color: rgb(34, 4, 168);
+  border: 1px solid rgb(34, 4, 168); /* Nastavite širino, stil in barvo obrobe */
+}
+
+.button-nagrada-flex {
+  position: relative;
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  flex-wrap: wrap;
+  grid-gap: 2rem;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .button-nagrada-flex {
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+  }
+}
+/* 
 .prev {
   position: absolute;
   left: 10px;
@@ -198,4 +334,4 @@
 .next {
   position: absolute;
   right: 10px;
-}
+} */

@@ -10,8 +10,8 @@ export default function Kontakt() {
     <>
       <NavBar />
       <div className="kontakt-wrapper">
+        <h1>O NAS</h1>
         <div className="kontakt-container">
-          <h1>KONTAKT</h1>
           <Link to="mailto:wtq.saso@gmail.com">wtq.saso@gmail.com</Link>
           <p>040 619-246</p>
           <form action="">

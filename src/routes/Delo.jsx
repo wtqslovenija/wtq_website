@@ -9,10 +9,10 @@ import Nivo from "../components/Delo/Nivo";
 import Prihodek from "../components/Delo/Prihodek";
 import VaseDelo from "../components/Delo/VaseDelo";
 
-import DeloIcon from "../icons/working.png";
-import MedalIcon from "../icons/medal.png";
-import LevelIcon from "../icons/next-level.png";
-import PasiveIcon from "../icons/financial-statement.png";
+import DeloIcon from "../icons/briefcase.png";
+import MedalIcon from "../icons/first-medal.png";
+import LevelIcon from "../icons/trophy.png";
+import PasiveIcon from "../icons/money-income.png";
 
 export default function Delo() {
   const location = useLocation();

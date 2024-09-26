@@ -145,7 +145,7 @@
   width: 50%;
   height: auto;
   object-fit: cover;
-  clip-path: inset(8.5% 14% 8.5% 14% round 8.5%);
+  clip-path: inset(10.5% 15% 10.5% 15% round 8.5%);
   margin-top: 2rem;
 }
 

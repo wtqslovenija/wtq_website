@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Domov.css";
 
-import DeloIcon from "../../icons/working.png";
-import MedalIcon from "../../icons/medal.png";
-import LevelIcon from "../../icons/next-level.png";
-import PasiveIcon from "../../icons/financial-statement.png";
+import DeloIcon from "../../icons/briefcase.png";
+import MedalIcon from "../../icons/first-medal.png";
+import LevelIcon from "../../icons/trophy.png";
+import PasiveIcon from "../../icons/money-income.png";
 
 export default function Buttons() {
   return (

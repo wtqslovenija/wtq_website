@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/wtq_website/static/css/main.cb1859a8.css",
+    "main.js": "/wtq_website/static/js/main.e94c7a6f.js",
+    "static/media/wtq_binance_setup.mp4": "/wtq_website/static/media/wtq_binance_setup.1fff87183937bfd17792.mp4",
+    "static/media/phone_template.png": "/wtq_website/static/media/phone_template.8e468de7ff9138d49cca.png",
+    "static/media/logo_transparent.png": "/wtq_website/static/media/logo_transparent.8335dc0a6367a6d34946.png",
+    "static/media/background_image.jpg": "/wtq_website/static/media/background_image.96fd5519a46cb002d593.jpg",
+    "static/media/international.png": "/wtq_website/static/media/international.4e4152711745137dd7f2.png",
+    "static/media/financial-statement.png": "/wtq_website/static/media/financial-statement.9d124263112524225f81.png",
+    "static/media/profile.png": "/wtq_website/static/media/profile.5faf09a7795d28bf5a2b.png",
+    "static/media/profits.png": "/wtq_website/static/media/profits.d960ed1940164e11f0c5.png",
+    "static/media/working.png": "/wtq_website/static/media/working.8f83b3e91530c8c65f51.png",
+    "static/media/medal.png": "/wtq_website/static/media/medal.427fc6ef0200a27fccba.png",
+    "static/media/next-level.png": "/wtq_website/static/media/next-level.7be73eba908103ac276b.png",
+    "static/media/office-building.png": "/wtq_website/static/media/office-building.531467f26e53b138c80d.png",
+    "index.html": "/wtq_website/index.html",
+    "main.cb1859a8.css.map": "/wtq_website/static/css/main.cb1859a8.css.map",
+    "main.e94c7a6f.js.map": "/wtq_website/static/js/main.e94c7a6f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb1859a8.css",
+    "static/js/main.e94c7a6f.js"
+  ]
+}

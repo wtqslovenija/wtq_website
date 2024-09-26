@@ -4,10 +4,11 @@ import { NagradaItems } from "./NagradaContent";
 export default function Nagrada() {
   const slides = NagradaItems; // Array of slides
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
+  const [hiddenButton, setHiddenButton] = useState(1); // To track which button is hidden
 
-  // Function to go to the next slide
   const handleSlide = (slide) => {
     setCurrentSlide(slide);
+    setHiddenButton(slide); // Hide the pressed button
   };
 
   // Function to go to the previous slide
@@ -22,7 +23,7 @@ export default function Nagrada() {
   return (
     <div className="delo-content">
       <h1>Nagrada za povabljenega novega člana</h1>
-      <div className="delo-nagrada-text">
+      <div className="delo-text">
         <p>
           <br />
           V spodnji preglednici si lahko ogledate nivoje, število opravljenih in
@@ -89,35 +90,27 @@ export default function Nagrada() {
           </table>
         </div>
         <div className="delo-slideshow">
-          <div key={currentSlide}>
+          <div className="delo-text" key={currentSlide}>
             <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
-          <div className="button-nagrada-flex">
-            <button
-              onClick={() => handleSlide(0)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 1
-            </button>
-            <button
-              onClick={() => handleSlide(1)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 2
-            </button>
-            <button
-              onClick={() => handleSlide(2)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 3
-            </button>
-            <button
-              onClick={() => handleSlide(3)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 4
-            </button>
+
+          <div className="delo-text delo-choose-button">
+            <p>Izberi primer:</p>
+          </div>
+          <div className="button-flex nagrada-flex">
+            {[...Array(4).keys()].map(
+              (index) =>
+                index !== hiddenButton && (
+                  <button
+                    key={index}
+                    onClick={() => handleSlide(index)}
+                    className="slideshow-btn"
+                  >
+                    PRIMER {index + 1}
+                  </button>
+                )
+            )}
           </div>
         </div>
       </div>

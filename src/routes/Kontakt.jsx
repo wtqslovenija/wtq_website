@@ -12,7 +12,7 @@ export default function Kontakt() {
       <div className="kontakt-wrapper">
         <h1>O NAS</h1>
         <div className="kontakt-container">
-          <Link to="mailto:wtq.saso@gmail.com">wtq.saso@gmail.com</Link>
+          <Link to="mailto:wtq.info@gmail.com">wtq.info@gmail.com</Link>
           <p>040 619-246</p>
           <form action="">
             <input placeholder="Ime*" type="text" />

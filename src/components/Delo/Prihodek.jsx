@@ -4,16 +4,17 @@ import { PrihodekItems } from "./PrihodekContent";
 export default function Prihodek() {
   const slides = PrihodekItems; // Array of slides
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
+  const [hiddenButton, setHiddenButton] = useState(1); // To track which button is hidden
 
-  // Function to go to the next slide
   const handleSlide = (slide) => {
     setCurrentSlide(slide);
+    setHiddenButton(slide); // Hide the pressed button
   };
 
   return (
     <div className="delo-content">
       <h1>Pasivni Prihodek</h1>
-      <div className="delo-nagrada-text">
+      <div className="delo-text">
         <p>
           <br />S pridobitvijo člana v vaši organizacijski strukturi do nivoja
           3, vam dnevno pripada pasivni prihodek. V spodnji preglednici sta
@@ -98,23 +99,27 @@ export default function Prihodek() {
           </table>
         </div>
         <div className="delo-slideshow">
-          <div key={currentSlide}>
+          <div className="delo-text" key={currentSlide}>
             <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
-          <div className="button-nagrada-flex">
-            <button
-              onClick={() => handleSlide(0)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 1
-            </button>
-            <button
-              onClick={() => handleSlide(1)}
-              className="slideshow-nagrada-btn"
-            >
-              PRIMER 2
-            </button>
+
+          <div className="delo-text delo-choose-button">
+            <p>Izberi primer:</p>
+          </div>
+          <div className="button-flex prihodek-flex">
+            {[...Array(2).keys()].map(
+              (index) =>
+                index !== hiddenButton && (
+                  <button
+                    key={index}
+                    onClick={() => handleSlide(index)}
+                    className="slideshow-btn "
+                  >
+                    PRIMER {index + 1}
+                  </button>
+                )
+            )}
           </div>
         </div>
       </div>

@@ -175,9 +175,22 @@
 }
 /* ----------- nivo------------------------------ */
 /* For desktop and larger screens */
-.delo-nivo-text {
+.delo-text {
   margin: 1rem 0;
+  background-color: var(--mainColor);
+  border-radius: 25px;
+  border: 2px solid var(--mainColor);
+  padding: 1rem;
+  margin: 2rem 0;
 }
+
+@media (max-width: 768px) {
+  .delo-text p {
+    padding-bottom: 1rem;
+    font-size: var(--fontSizePhone);
+  }
+}
+
 .delo-tabela {
   width: 100%;
   overflow-x: auto; /* Add horizontal scrolling if needed */
@@ -189,12 +202,11 @@
   text-align: center;
   font-family: var(--fontFamily-main);
 }
-
 .delo-tabela th,
 .delo-tabela td {
   border: 1px solid #000;
   padding: 8px;
-  width: 15%;
+  width: 10%;
   font-size: var(--fontSizeComp);
 }
 
@@ -220,8 +232,8 @@
 
   .delo-tabela th,
   .delo-tabela td {
-    padding: 3px; /* Reduce padding for mobile */
-    font-size: var(--fontSizePhone);
+    padding: 3px 0;
+    font-size: 0.8rem;
   }
 }
 
@@ -231,7 +243,6 @@
   justify-content: space-between;
   align-items: center;
   color: black;
-  padding: 2rem;
 }
 .p {
 }
@@ -248,7 +259,14 @@
 .delo-slideshow h3 {
   font-size: 2rem;
 }
-
+.delo-choose-button {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.delo-choose-button p {
+  font-weight: 500;
+  text-align: center;
+}
 .slideshow-btn {
   position: relative;
   background-color: var(--mainColor);
@@ -259,7 +277,7 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  width: 3rem;
+  width: 100%;
   height: 2rem;
 }
 .button-flex {
@@ -270,7 +288,14 @@
   flex-wrap: wrap;
   grid-gap: 0.8rem;
   width: 100%;
-  height: 50px;
+  height: auto;
+  align-items: center;
+}
+.nagrada-flex {
+  grid-template-columns: repeat(3, auto);
+}
+.prihodek-flex {
+  grid-template-columns: repeat(1, auto);
 }
 .slideshow-btn:hover {
   background-color: white;
@@ -284,7 +309,6 @@
 @media screen and (max-width: 1000px) {
   .button-flex {
     margin-top: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
   }
 }
 
@@ -307,31 +331,3 @@
   color: rgb(34, 4, 168);
   border: 1px solid rgb(34, 4, 168); /* Nastavite širino, stil in barvo obrobe */
 }
-
-.button-nagrada-flex {
-  position: relative;
-  display: flex;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  flex-wrap: wrap;
-  grid-gap: 2rem;
-  width: 100%;
-  height: 50px;
-}
-
-@media screen and (max-width: 1000px) {
-  .button-nagrada-flex {
-    margin-top: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-  }
-}
-/* 
-.prev {
-  position: absolute;
-  left: 10px;
-}
-
-.next {
-  position: absolute;
-  right: 10px;
-} */

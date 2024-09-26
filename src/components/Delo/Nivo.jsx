@@ -3,10 +3,12 @@ import { NivoItems } from "./NivoContent";
 export default function Nivo() {
   const slides = NivoItems; // Array of slides
   const [currentSlide, setCurrentSlide] = useState(0); // Current slide index
+  const [hiddenButton, setHiddenButton] = useState(1); // To track which button is hidden
 
   // Function to go to the next slide
   const handleSlide = (slide) => {
     setCurrentSlide(slide);
+    setHiddenButton(slide); // Hide the pressed button
   };
 
   /*  // Function to go to the previous slide
@@ -19,7 +21,7 @@ export default function Nivo() {
   return (
     <div className="delo-content">
       <h1>Nivo</h1>
-      <div className="delo-nivo-text">
+      <div className="delo-text">
         <p>
           Sistem je nastavljen, da se trudi stimulirati vaš trud, ob pridobitvi
           vsakega novega člana.
@@ -172,32 +174,26 @@ export default function Nivo() {
         </div>
 
         <div className="delo-slideshow">
-          <div key={currentSlide}>
+          <div className="delo-text" key={currentSlide}>
             <h3>{slides[currentSlide].title}</h3>
             <p>{slides[currentSlide].text}</p>
           </div>
+          <div className="delo-text delo-choose-button">
+            <p>Izberi nivo:</p>
+          </div>
           <div className="button-flex">
-            <button onClick={() => handleSlide(0)} className="slideshow-btn">
-              LV1
-            </button>
-            <button onClick={() => handleSlide(1)} className="slideshow-btn">
-              LV2
-            </button>
-            <button onClick={() => handleSlide(2)} className="slideshow-btn">
-              LV3
-            </button>
-            <button onClick={() => handleSlide(3)} className="slideshow-btn">
-              LV4
-            </button>
-            <button onClick={() => handleSlide(4)} className="slideshow-btn">
-              LV5
-            </button>
-            <button onClick={() => handleSlide(5)} className="slideshow-btn">
-              LV6
-            </button>
-            <button onClick={() => handleSlide(6)} className="slideshow-btn">
-              LV7
-            </button>
+            {[...Array(7).keys()].map(
+              (index) =>
+                index !== hiddenButton && (
+                  <button
+                    key={index}
+                    onClick={() => handleSlide(index)}
+                    className="slideshow-btn"
+                  >
+                    LV{index + 1}
+                  </button>
+                )
+            )}
           </div>
         </div>
       </div>
